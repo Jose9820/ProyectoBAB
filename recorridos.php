@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -75,19 +78,43 @@
                             <?php
                             require 'conexionBD.php';
 
-                            $tablaBoletos = $conexion->query("SELECT * FROM `recorridos` ");
-                            while ($registro = mysqli_fetch_array($tablaBoletos)) {
+                            if ($_SESSION['tipoCuenta'] =="Administrador") {
+                                $tablaBoletos = $conexion->query("SELECT * FROM `recorridos` ");
+                                while ($registro = mysqli_fetch_array($tablaBoletos)) {
+                                    echo "<tr>
+                                            <td>$registro[ID_recorridos]</td>
+                                            <td>$registro[Lugar_Destino]</td>
+                                            <td>$registro[Lugar_Partida]</td>
+                                            <td>$registro[Hora]</td>
+                                            <td>$registro[Fecha]</td>
+                                            <td>$registro[Precio]</td>
+                                            <td>$registro[Cupo_Disponible]</td>
+                                            <td><button name='Editar' id='idboton1'>Editar</button></td>
+                                            <td><button name='Borrar' id='idboton1'>Borrar</button></td>
+                                            
+                                         </tr>";
+                                }
                                 echo "<tr>
-                                    <td>$registro[ID_recorridos]</td>
-                                    <td>$registro[Lugar_Destino]</td>
-                                    <td>$registro[Lugar_Partida]</td>
-                                    <td>$registro[Hora]</td>
-                                    <td>$registro[Fecha]</td>
-                                    <td>$registro[Precio]</td>
-                                    <td>$registro[Cupo_Disponible]</td>
-                                    <td><button name='Comprar' id='idboton1'>Comprar</button></td>
-                                </tr>";
+                                        <td colspan='9'><button name='Agregar' id='idboton1'>Agregar</button></td>
+                                     </tr>";
                             }
+
+                            if ($_SESSION['tipoCuenta'] == "Cliente" or $_SESSION['tipoCuenta'] == "Terceros") {
+                                $tablaBoletos = $conexion->query("SELECT * FROM `recorridos` ");
+                                while ($registro = mysqli_fetch_array($tablaBoletos)) {
+                                    echo "<tr>
+                                            <td>$registro[ID_recorridos]</td>
+                                            <td>$registro[Lugar_Destino]</td>
+                                            <td>$registro[Lugar_Partida]</td>
+                                            <td>$registro[Hora]</td>
+                                            <td>$registro[Fecha]</td>
+                                            <td>$registro[Precio]</td>
+                                            <td>$registro[Cupo_Disponible]</td>
+                                            <td><button name='Comprar' id='idboton1'>Comprar</button></td>
+                                         </tr>";
+                                }
+                            }
+
                             mysqli_close($conexion);
                             ?>
                         </table>
