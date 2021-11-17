@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -61,7 +64,14 @@
             <div class="content_resize">
                 <div class="mainbar">
                     <div class="boletos">
-                        <h2>Boletos adquiridos por los usuarios:</h2>
+                        <?php
+                        if ($_SESSION['tipoCuenta'] == "Administrador") {
+                            echo "<h2>Boletos adquiridos por los usuarios:</h2>";
+                        }
+                        if ($_SESSION['tipoCuenta'] == "Cliente" or $_SESSION['tipoCuenta'] == "Terceros") {
+                            echo "<h2>Boletos comprados:</h2>";
+                        }
+                        ?>
                         <table>
                             <tr class="camposTabla">
                                 <th>ID boleto</th>
@@ -75,18 +85,35 @@
                             <?php
                             require 'conexionBD.php';
 
-                            $tablaBoletos = $conexion->query("SELECT * FROM `boletos` ");
-                            while ($registro = mysqli_fetch_array($tablaBoletos)) {
-                                echo "<tr>
-                                    <td>$registro[ID_boleto]</td>
-                                    <td>$registro[Precio_Boleto]</td>
-                                    <td>$registro[Hora_Compra]</td>
-                                    <td>$registro[Fecha_Compra]</td>
-                                    <td>$registro[Codigo]</td>
-                                    <td>$registro[id_Usuario]</td>
-                                    <td><button name='ver' id='btnVer'>Ver</button></td>
-                                </tr>";
+                            if ($_SESSION['tipoCuenta'] == "Administrador") {
+                                $tablaBoletos = $conexion->query("SELECT * FROM `boletos` ");
+                                while ($registro = mysqli_fetch_array($tablaBoletos)) {
+                                    echo "<tr>
+                                            <td>$registro[ID_boleto]</td>
+                                            <td>$registro[Precio_Boleto]</td>
+                                            <td>$registro[Hora_Compra]</td>
+                                            <td>$registro[Fecha_Compra]</td>
+                                            <td>$registro[Codigo]</td>
+                                            <td>$registro[id_Usuario]</td>
+                                            <td><button name='ver' id='btnVer'>Ver</button></td>
+                                         </tr>";
+                                }
                             }
+                            if ($_SESSION['tipoCuenta'] == "Cliente" or $_SESSION['tipoCuenta'] == "Terceros") {
+                                $tablaBoletos = $conexion->query("SELECT * FROM `boletos` WHERE id_Usuario = '$_SESSION[id]'");
+                                while ($registro = mysqli_fetch_array($tablaBoletos)) {
+                                    echo "<tr>
+                                            <td>$registro[ID_boleto]</td>
+                                            <td>$registro[Precio_Boleto]</td>
+                                            <td>$registro[Hora_Compra]</td>
+                                            <td>$registro[Fecha_Compra]</td>
+                                            <td>$registro[Codigo]</td>
+                                            <td>$registro[id_Usuario]</td>
+                                            <td><button name='ver' id='btnVer'>Ver</button></td>
+                                         </tr>";
+                                }
+                            }
+
                             mysqli_close($conexion);
                             ?>
                         </table>

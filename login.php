@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $nombre = $_POST['nombreUsuario'];
 $contrasena = $_POST['contrasenaUsuario'];
 
