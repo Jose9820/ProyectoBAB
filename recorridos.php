@@ -88,15 +88,9 @@ session_start();
                                             <td>$registro[Hora]</td>
                                             <td>$registro[Fecha]</td>
                                             <td>$registro[Precio]</td>
-                                            <td>$registro[Cupo_Disponible]</td>
-                                            <td><button name='Editar' id='idboton1'>Editar</button></td>
-                                            <td><button name='Borrar' id='idboton1'>Borrar</button></td>
-                                            
+                                            <td>$registro[Cupo_Disponible]</td>   
                                          </tr>";
                                 }
-                                echo "<tr>
-                                        <td colspan='9'><button name='Agregar' id='idboton1'>Agregar</button></td>
-                                     </tr>";
                             }
 
                             if ($_SESSION['tipoCuenta'] == "Cliente" or $_SESSION['tipoCuenta'] == "Terceros") {
@@ -110,7 +104,6 @@ session_start();
                                             <td>$registro[Fecha]</td>
                                             <td>$registro[Precio]</td>
                                             <td>$registro[Cupo_Disponible]</td>
-                                            <td><button name='Comprar' id='idboton1'>Comprar</button></td>
                                          </tr>";
                                 }
                             }
@@ -118,6 +111,15 @@ session_start();
                             mysqli_close($conexion);
                             ?>
                         </table>
+                        <?php
+                        if ($_SESSION['tipoCuenta'] == "Cliente" or $_SESSION['tipoCuenta'] == "Terceros") {
+                            echo "<br>
+                                <form action='comprar.php' method='POST'>
+                                    <input type='text' name='id_boleto' id='id_boleto' placeholder='ID boeto'>
+                                    <input type='submit' value='Comprar'>
+                                </form>";
+                        }
+                        ?>
                     </div>
                     <!--<p class="pages"><small>Page 1 of 2 &nbsp;&nbsp;&nbsp;</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
         -->
