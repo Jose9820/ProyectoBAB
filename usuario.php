@@ -1,5 +1,4 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -24,8 +23,7 @@
         <div class="searchform">
           <form id="formsearch" name="formsearch" method="post" action="#">
             <span>
-              <input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80"
-                value="Search our ste:" type="text" />
+              <input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80" value="Search our ste:" type="text" />
             </span>
             <input name="button_search" src="images/search.gif" class="button_search" type="image" />
           </form>
@@ -51,8 +49,8 @@
               </span></a>
             <a href="boletos.php"><img src="images/camion3.png" width="960" height="360" alt="" />
               <span>Viajar con nosotros es muy facil. Si ya adquiriste tu boleto y estas list@ para la aventura solo necesitas llevarlo
-                 impreso el dia del viajes. Puedes verificar y cancelar tus compras en la seccion de boletos, tambien puedes descargar tu
-                 boleto en esta sección</span></a>
+                impreso el dia del viajes. Puedes verificar y cancelar tus compras en la seccion de boletos, tambien puedes descargar tu
+                boleto en esta sección</span></a>
           </div>
           <div class="clr"></div>
         </div>
@@ -62,7 +60,30 @@
     <div class="content">
       <div class="content_resize">
         <div class="mainbar">
-          
+          <h2>Comprar es muy facil. Solo elige tu recorrido favorito y una opcion de pago disponible:</h2>
+          <p><b>Introduzca sus datos personales:</b></p>
+          <br />
+          <label>Telefono movil:</label><br />
+          <input type="text" id="movil" value="" size="8" maxlength="9" /><br />
+          <br />
+          <label>Email:</label><br />
+          <input type="text" id="email1" value="" size="25" /><br />
+          <br />
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="WBR5X8WN2ABPS">
+            <table>
+              <tr>
+                <td><input type="hidden" name="on0" value="ID boleto">ID boleto</td>
+              </tr>
+              <tr>
+                <td><input type="text" name="os0" maxlength="200"></td>
+              </tr>
+            </table>
+            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+          </form>
+
           <!--<p class="pages"><small>Page 1 of 2 &nbsp;&nbsp;&nbsp;</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
         -->
         </div>
@@ -105,12 +126,7 @@
       <div class="fbg_resize">
         <div class="col c1">
           <h2><span>Image</span> Gallery</h2>
-          <a href="#"><img src="images/gal1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/gal1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a>
         </div>
         <div class="col c2">
           <h2><span>Services</span> Overview</h2>

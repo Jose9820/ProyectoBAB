@@ -80,7 +80,6 @@ session_start();
                                 <th>Fecha</th>
                                 <th>Codigo</th>
                                 <th>ID usuario</th>
-                                <th>Más detalles</th>
                             </tr>
                             <?php
                             require 'conexionBD.php';
@@ -95,10 +94,10 @@ session_start();
                                             <td>$registro[Fecha_Compra]</td>
                                             <td>$registro[Codigo]</td>
                                             <td>$registro[id_Usuario]</td>
-                                            <td><button name='ver' id='btnVer'>Ver</button></td>
                                          </tr>";
                                 }
                             }
+
                             if ($_SESSION['tipoCuenta'] == "Cliente" or $_SESSION['tipoCuenta'] == "Terceros") {
                                 $tablaBoletos = $conexion->query("SELECT * FROM `boletos` WHERE id_Usuario = '$_SESSION[id]'");
                                 while ($registro = mysqli_fetch_array($tablaBoletos)) {
@@ -109,7 +108,6 @@ session_start();
                                             <td>$registro[Fecha_Compra]</td>
                                             <td>$registro[Codigo]</td>
                                             <td>$registro[id_Usuario]</td>
-                                            <td><button name='ver' id='btnVer'>Ver</button></td>
                                          </tr>";
                                 }
                             }
@@ -117,6 +115,20 @@ session_start();
                             mysqli_close($conexion);
                             ?>
                         </table>
+                        <?php
+                        if ($_SESSION['tipoCuenta'] == "Cliente" or $_SESSION['tipoCuenta'] == "Terceros") {
+                            echo "<br>
+                                <form action='imprimir.php' method='POST'>
+                                    <input type='text' name='id_boleto' id='id_boleto' placeholder='ID boleto'>
+                                    <input type='submit' value='Imprimir'>
+                                </form>
+                                <br>
+                                <form action='cancelar.php' method='POST'>
+                                    <input type='text' name='id_boleto' id='id_boleto' placeholder='ID boleto'>
+                                    <input type='submit' value='Cancelar'>
+                                </form>";
+                        }
+                        ?>
                     </div>
                     <!--<p class="pages"><small>Page 1 of 2 &nbsp;&nbsp;&nbsp;</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
         -->
