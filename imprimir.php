@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['tipoCuenta'])){
+    header("Location: index.html");
+}
+
 $idBoleto = $_POST['id_boleto'];
 require 'fpdf184/fpdf.php';
 require 'conexionBD.php';
@@ -31,7 +35,6 @@ if(mysqli_num_rows($consulta) > 0){
     $pdf->Cell(80, 10, '$'.$boleto['Precio_Boleto'], "BR", 0, 'L');
     
     $pdf->Output();
-    //header("location: boletos.php");
 }else{
     echo"Registro no encontrado. Revise dato introducido";
 }

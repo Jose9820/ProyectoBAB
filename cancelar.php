@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['tipoCuenta'])){
+    header("Location: index.html");
+}
+
 $idBoleto = $_POST['id_boleto'];
 
 require 'conexionBD.php';

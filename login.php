@@ -10,7 +10,7 @@ if(mysqli_num_rows($consulta) > 0){
     $resultado = mysqli_fetch_array($consulta);
     $_SESSION["id"]= $resultado[0];
     $_SESSION["tipoCuenta"]= $resultado[1];
-    header("Location: bienvenida.html");
+    header("Location: bienvenida.php");
 }else{
     echo "Esta cuenta no existe";
 }

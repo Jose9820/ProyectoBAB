@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['tipoCuenta'])){
+    header("Location: index.html");
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,7 +24,7 @@ session_start();
         <div class="header">
             <div class="header_resize">
                 <div class="logo">
-                    <h1><a href="bienvenida.html">AGENCIA <span>BAB</span> <small>Recoriendo el camino contigo</small></a></h1>
+                    <h1><a href="bienvenida.php">AGENCIA <span>BAB</span> <small>Recoriendo el camino contigo</small></a></h1>
                 </div>
                 <div class="searchform">
                     <form id="formsearch" name="formsearch" method="post" action="#">
@@ -34,17 +37,17 @@ session_start();
                 <div class="clr"></div>
                 <div class="menu_nav">
                     <ul>
-                        <li><a href="bienvenida.html"><span>BIENVENIDO</span></a></li>
+                        <li><a href="bienvenida.php"><span>BIENVENIDO</span></a></li>
                         <li class="active"><a href="recorridos.php"><span>RUTAS Y HORARIOS</span></a></li>
                         <li><a href="boletos.php"><span>BOLETOS</span></a></li>
-                        <li><a href="agenciaBAB.html"><span>AGENCIA BAB</span></a></li>
+                        <li><a href="agenciaBAB.php"><span>AGENCIA BAB</span></a></li>
                         <li><a href="cerrarSesion.php"><span>SALIR</span></a></li>
                     </ul>
                 </div>
                 <div class="clr"></div>
                 <div class="slider">
                     <div id="coin-slider">
-                        <a href="agenciaBAB.html"><img src="images/imagen1.png" width="960" height="360" alt="" />
+                        <a href="agenciaBAB.php"><img src="images/imagen1.png" width="960" height="360" alt="" />
                             <span>Crea tus mejores recuerdos en nuestros viajes, los mejores lugares te esperan. Descubre nuevas experiencias.</span></a>
                         <a href="recorridos.php"><img src="images/slide2.jpg" width="960" height="360" alt="" />
                             <span>No sabes a donde ir, que lugares visitar o buscar nuevos destinos, nosostros podemos ayudarte. Visita nuestra sección de
@@ -87,7 +90,7 @@ session_start();
                                             <td>$registro[Lugar_Partida]</td>
                                             <td>$registro[Hora]</td>
                                             <td>$registro[Fecha]</td>
-                                            <td>$registro[Precio]</td>
+                                            <td>$$registro[Precio]</td>
                                             <td>$registro[Cupo_Disponible]</td>   
                                          </tr>";
                                 }
@@ -102,7 +105,7 @@ session_start();
                                             <td>$registro[Lugar_Partida]</td>
                                             <td>$registro[Hora]</td>
                                             <td>$registro[Fecha]</td>
-                                            <td>$registro[Precio]</td>
+                                            <td>$$registro[Precio]</td>
                                             <td>$registro[Cupo_Disponible]</td>
                                          </tr>";
                                 }
