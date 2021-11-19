@@ -5,8 +5,6 @@ if (!isset($_SESSION['tipoCuenta'])) {
 }
 
 $idBoleto = $_POST['id_boleto'];
-$telefono = $_POST['telefono'];
-$correo = $_POST['email'];
 
 $opcionPago1[1] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
@@ -134,6 +132,8 @@ $consulta = $conexion->query("SELECT * FROM `recorridos` WHERE ID_recorridos='$i
 
 if (mysqli_num_rows($consulta) > 0) {
   $recorrido = mysqli_fetch_array($consulta);
+  $consulta = $conexion->query("SELECT Nombre_Usuario, Correo_Electronico, Telefono FROM usuarios WHERE ID_usuarios='$_SESSION[id]'");
+  $usuario = mysqli_fetch_array($consulta);
   date_default_timezone_set("America/Mexico_City");
   $horaCompra = date("H:i", time());
   $FechaCompra = date("Y-m-d", time());
@@ -213,8 +213,9 @@ mysqli_close($conexion);
               <p>Lugar de partida: $recorrido[Lugar_Partida]</p>
               <p>Hora y fecha: $recorrido[Hora], $recorrido[Fecha]</p>
               <p>Precio: $$recorrido[Precio]</p>
-              <p>Correo de contacto: $correo</p>
-              <p>Numero de contacto: $telefono</p><br>";
+              <p>Nombre: $usuario[Nombre_Usuario]</p>
+              <p>Correo de contacto: $usuario[Correo_Electronico]</p>
+              <p>Numero de contacto: $usuario[Telefono]</p><br>";
           for ($i = 0; $i <= sizeof($opcionPago1); $i++) {
             if ($idBoleto == $i) {
               echo $opcionPago1[$i];

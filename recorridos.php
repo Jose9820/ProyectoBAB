@@ -112,7 +112,7 @@ if (!isset($_SESSION['tipoCuenta'])) {
                         <?php
                         if ($_SESSION['tipoCuenta'] == "Cliente" or $_SESSION['tipoCuenta'] == "Terceros") {
                             echo "<br>
-                                <form action='usuario.php' method='POST'>
+                                <form action='comprar.php' method='POST'>
                                     <input type='text' name='id_boleto' id='id_boleto' placeholder='ID boleto'>
                                     <input type='submit' value='Comprar'>
                                 </form>";

@@ -17,7 +17,7 @@ if(mysqli_num_rows($consulta) > 0){
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
-    $pdf->Cell(40,10,'Boleto de viaje', 0, 1, "C");
+    $pdf->Cell(60,10,'Boleto de viaje '.$idBoleto, 0, 1, "L");
     $pdf->SetFont('Arial','',16);
     $pdf->Cell(40, 10, 'Codigo:', "LT", 0, 'L');
     $pdf->Cell(40, 10, $boleto['Codigo'],"T", 0, 'L');
