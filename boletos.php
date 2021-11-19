@@ -37,8 +37,8 @@ session_start();
                         <li><a href="bienvenida.html"><span>BIENVENIDO</span></a></li>
                         <li><a href="recorridos.php"><span>RUTAS Y HORARIOS</span></a></li>
                         <li class="active"><a href="boletos.php"><span>BOLETOS</span></a></li>
-                        <li><a href="usuario.php"><span>USUARIO</span></a></li>
                         <li><a href="agenciaBAB.html"><span>AGENCIA BAB</span></a></li>
+                        <li><a href="cerrarSesion.php"><span>SALIR</span></a></li>
                     </ul>
                 </div>
                 <div class="clr"></div>

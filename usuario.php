@@ -1,3 +1,18 @@
+<?php
+session_start();
+$idBoleto = $_POST['id_boleto'];
+require 'conexionBD.php';
+
+$consulta = $conexion->query("SELECT * FROM `recorridos` WHERE ID_recorridos='$idBoleto'");
+
+if (mysqli_num_rows($consulta) > 0) {
+  $recorrido = mysqli_fetch_array($consulta);
+} else {
+  mysqli_close($conexion);
+  header("location: recorridos.php");
+}
+mysqli_close($conexion);
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -32,10 +47,10 @@
         <div class="menu_nav">
           <ul>
             <li><a href="bienvenida.html"><span>BIENVENIDO</span></a></li>
-            <li><a href="recorridos.php"><span>RUTAS Y HORARIOS</span></a></li>
+            <li class="active"><a href="recorridos.php"><span>RUTAS Y HORARIOS</span></a></li>
             <li><a href="boletos.php"><span>BOLETOS</span></a></li>
-            <li class="active"><a href="usuario.php"><span>USUARIO</span></a></li>
             <li><a href="agenciaBAB.html"><span>AGENCIA BAB</span></a></li>
+            <li><a href="cerrarSesion.php"><span>SALIR</span></a></li>
           </ul>
         </div>
         <div class="clr"></div>
@@ -61,29 +76,24 @@
       <div class="content_resize">
         <div class="mainbar">
           <h2>Comprar es muy facil. Solo elige tu recorrido favorito y una opcion de pago disponible:</h2>
+          <p><b>Datos del recorrido a comprar:</b></p>
+          <?php
+          echo "<p>Lugar de destino: $recorrido[Lugar_Destino]</p>
+              <p>Lugar de partida: $recorrido[Lugar_Partida]</p>
+              <p>Hora y fecha: $recorrido[Hora], $recorrido[Fecha]</p>
+              <p>Precio: $$recorrido[Precio]</p>";
+          ?>
           <p><b>Introduzca sus datos personales:</b></p>
-          <br />
-          <label>Telefono movil:</label><br />
-          <input type="text" id="movil" value="" size="8" maxlength="9" /><br />
-          <br />
-          <label>Email:</label><br />
-          <input type="text" id="email1" value="" size="25" /><br />
-          <br />
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="WBR5X8WN2ABPS">
-            <table>
-              <tr>
-                <td><input type="hidden" name="on0" value="ID boleto">ID boleto</td>
-              </tr>
-              <tr>
-                <td><input type="text" name="os0" maxlength="200"></td>
-              </tr>
-            </table>
-            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+          <form action="comprar.php" method="POST">
+            <label>Telefono movil:</label><br />
+            <input type="text" id="movil" name="telefono" value="" size="8" maxlength="9" /><br />
+            <br />
+            <label>Email:</label><br />
+            <input type="text" id="email1" name="email" value="" size="25" /><br />
+            <br />
+            <input type="hidden" name="id_boleto" value="<?php echo"$idBoleto";?>">
+            <input type="submit" value="Comprar">
           </form>
-
           <!--<p class="pages"><small>Page 1 of 2 &nbsp;&nbsp;&nbsp;</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
         -->
         </div>

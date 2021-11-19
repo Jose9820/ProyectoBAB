@@ -37,8 +37,8 @@ session_start();
                         <li><a href="bienvenida.html"><span>BIENVENIDO</span></a></li>
                         <li class="active"><a href="recorridos.php"><span>RUTAS Y HORARIOS</span></a></li>
                         <li><a href="boletos.php"><span>BOLETOS</span></a></li>
-                        <li><a href="usuario.php"><span>USUARIO</span></a></li>
                         <li><a href="agenciaBAB.html"><span>AGENCIA BAB</span></a></li>
+                        <li><a href="cerrarSesion.php"><span>SALIR</span></a></li>
                     </ul>
                 </div>
                 <div class="clr"></div>
@@ -114,8 +114,8 @@ session_start();
                         <?php
                         if ($_SESSION['tipoCuenta'] == "Cliente" or $_SESSION['tipoCuenta'] == "Terceros") {
                             echo "<br>
-                                <form action='comprar.php' method='POST'>
-                                    <input type='text' name='id_boleto' id='id_boleto' placeholder='ID boeto'>
+                                <form action='usuario.php' method='POST'>
+                                    <input type='text' name='id_boleto' id='id_boleto' placeholder='ID boleto'>
                                     <input type='submit' value='Comprar'>
                                 </form>";
                         }
