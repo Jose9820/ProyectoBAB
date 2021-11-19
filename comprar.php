@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['tipoCuenta'])){
+if (!isset($_SESSION['tipoCuenta'])) {
   header("Location: index.html");
 }
 
@@ -8,121 +8,121 @@ $idBoleto = $_POST['id_boleto'];
 $telefono = $_POST['telefono'];
 $correo = $_POST['email'];
 
-$opcionPago1 [1]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[1] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='8QZADEV5J49VL'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [2]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[2] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='89MXNUEV82EYY'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [3]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[3] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='8LGZYFM6SQEA6'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [4]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[4] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='EESWNLSF9BJ5E'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [5]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[5] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='QUSRLQFNB77CU'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [6]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[6] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='75CFYD7EY6SJS'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [7]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[7] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='4LGZDZU3BK37A'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [8]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[8] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='A9WFMW3BGQQQU'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [9]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[9] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='BC3TFSJMVDCBG'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [10]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[10] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='S6BKX9SK8EW4N'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [11]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[11] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='SXZC2V2SJWGAU'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [12]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[12] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='8C4E9UFNN4CG2'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [13]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[13] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='Y8B65Q22AN9V6'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [14]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[14] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='ZKKGVNTKJYDRL'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [15]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[15] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='GUWDXC6ESY7YY'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [16]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[16] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='U4QSWY4UAUHVA'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [17]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[17] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='R4QC7LECNJR8N'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [18]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[18] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='CK3ZMCCRG3UMC'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [19]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[19] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='FKE3SFL3XKMWY'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
   <img alt='' border='0' src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif' width='1' height='1'>
   </form>";
-$opcionPago1 [20]="<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+$opcionPago1[20] = "<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
   <input type='hidden' name='cmd' value='_s-xclick'>
   <input type='hidden' name='hosted_button_id' value='LGKWP69JKT7SY'>
   <input type='image' src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal, la forma más segura y rápida de pagar en línea.'>
@@ -133,15 +133,15 @@ require 'conexionBD.php';
 $consulta = $conexion->query("SELECT * FROM `recorridos` WHERE ID_recorridos='$idBoleto'");
 
 if (mysqli_num_rows($consulta) > 0) {
-    $recorrido = mysqli_fetch_array($consulta);
-    date_default_timezone_set("America/Mexico_City");
-    $horaCompra =date("H:i",time());
-    $FechaCompra = date("Y-m-d",time());
-    
-    $conexion->query("INSERT INTO `boletos` (`Precio_Boleto`, `Hora_Compra`, `Fecha_Compra`, `Codigo`, `id_Usuario`) 
+  $recorrido = mysqli_fetch_array($consulta);
+  date_default_timezone_set("America/Mexico_City");
+  $horaCompra = date("H:i", time());
+  $FechaCompra = date("Y-m-d", time());
+
+  $conexion->query("INSERT INTO `boletos` (`Precio_Boleto`, `Hora_Compra`, `Fecha_Compra`, `Codigo`, `id_Usuario`) 
     VALUES ($recorrido[Precio], '$horaCompra', '$FechaCompra', '$recorrido[ID_recorridos]', '$_SESSION[id]')");
-}else{
-    echo"Recorrido no encontrado. Verifique dato";
+} else {
+  echo "Recorrido no encontrado. Verifique dato";
 }
 mysqli_close($conexion);
 ?>
@@ -169,12 +169,10 @@ mysqli_close($conexion);
           <h1><a href="bienvenida.php">AGENCIA <span>BAB</span> <small>Recoriendo el camino contigo</small></a></h1>
         </div>
         <div class="searchform">
-          <form id="formsearch" name="formsearch" method="post" action="#">
-            <span>
-              <input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80" value="Search our ste:" type="text" />
-            </span>
-            <input name="button_search" src="images/search.gif" class="button_search" type="image" />
-          </form>
+          <span>
+            <br><br>
+            <p><?php echo $_SESSION['tipoCuenta']; ?></p>
+          </span>
         </div>
         <div class="clr"></div>
         <div class="menu_nav">
@@ -217,45 +215,44 @@ mysqli_close($conexion);
               <p>Precio: $$recorrido[Precio]</p>
               <p>Correo de contacto: $correo</p>
               <p>Numero de contacto: $telefono</p><br>";
-            for ($i = 0; $i <= sizeof($opcionPago1); $i++) { 
-              if ($idBoleto == $i) {
-               echo $opcionPago1[$i];
-               $i=21;
-              }
+          for ($i = 0; $i <= sizeof($opcionPago1); $i++) {
+            if ($idBoleto == $i) {
+              echo $opcionPago1[$i];
+              $i = 21;
             }
+          }
           ?>
           <!--<p class="pages"><small>Page 1 of 2 &nbsp;&nbsp;&nbsp;</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
         -->
         </div>
         <div class="sidebar">
           <div class="gadget">
-            <h2 class="star"><span>Menu</span>Auxiliar</h2>
-            <div class="clr"></div>
-            <ul class="sb_menu">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Eligenos</a></li>
-              <li><a href="#">¿Quienes somos?</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Archives</a></li>
-              <li><a href="#">Web Templates</a></li>
-            </ul>
-          </div>
-          <div class="gadget">
             <h2 class="star"><span>ALIADOS EN NUESTROS VIAJES</span></h2>
             <div class="clr"></div>
             <ul class="ex_menu">
-              <li><a href="http://www.dreamtemplate.com/">¿Necesitas mas de un asiento?</a><br />
+              <li><a href="https://www.bestday.com.mx/">¿Necesitas reservar un hotel?</a><br />
                 Contamos con servicio especial para agencias de viajes</li>
-              <li><a href="http://www.templatesold.com/">TemplateSOLD</a><br />
-                Premium WordPress &amp; Joomla Themes</li>
-              <li><a href="http://www.imhosted.com/">ImHosted.com</a><br />
-                Affordable Web Hosting Provider</li>
-              <li><a href="http://www.megastockphotos.com/">MegaStockPhotos</a><br />
-                Unlimited Amazing Stock Photos</li>
-              <li><a href="http://www.evrsoft.com/">Evrsoft</a><br />
-                Website Builder Software &amp; Tools</li>
-              <li><a href="http://www.csshub.com/">CSS Hub</a><br />
-                Premium CSS Templates</li>
+              <li><a href="http://www.templatesold.com/">Paquetes sugeridos</a><br />
+                Paquetes numero uno</li>
+              <li><a href="http://www.imhosted.com/">Ofertas</a><br />
+                Aprovecha Ofertas</li>
+              <li><a href="http://www.megastockphotos.com/">Zonas turisticas</a><br />
+                Las mejores 5 zonas turisticas</li>
+              <li><a href="http://www.evrsoft.com/">Playas</a><br />
+                Las mejores playas</li>
+              <li><a href="http://www.csshub.com/">Zonas Arqueológicas</a><br />
+                Las mejores 5 Zonas Arqueológicas</li>
+            </ul>
+          </div>
+          <div class="gadget">
+            <h2 class="star"><span>Menu</span>Auxiliar</h2>
+            <div class="clr"></div>
+            <ul class="sb_menu">
+              <li><a href="bienvenida.php">Bienvenido</a></li>
+              <li><a href="recorridos.php">Rutas y horarios</a></li>
+              <li><a href="boletos.php">Boletos</a></li>
+              <li><a href="agenciaBAB.php">Agencia BAB</a></li>
+              <li><a href="cerrarSesion.php">Salir</a></li>
             </ul>
           </div>
         </div>
@@ -266,27 +263,30 @@ mysqli_close($conexion);
       <div class="fbg_resize">
         <div class="col c1">
           <h2><span>Image</span> Gallery</h2>
-          <a href="#"><img src="images/gal1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen3.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen4.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen5.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen6.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen7.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen8.jpg" width="75" height="75" alt="" class="gal" /></a>
         </div>
         <div class="col c2">
-          <h2><span>Services</span> Overview</h2>
-          <p>Curabitur sed urna id nunc pulvinar semper. Nunc sit amet tortor sit amet lacus sagittis posuere cursus
-            vitae nunc.Etiam venenatis, turpis at eleifend porta, nisl nulla bibendum justo.</p>
+          <h2><span>Servicios</span> Hoteles</h2>
+          <p>Sigue el enlace de estas paginas y reserva un hotel</p>
           <ul class="fbg_ul">
-            <li><a href="#">Lorem ipsum dolor labore et dolore.</a></li>
-            <li><a href="#">Excepteur officia deserunt.</a></li>
-            <li><a href="#">Integer tellus ipsum tempor sed.</a></li>
+            <li><a href="#">https://www.bestday.com.mx/</a></li>
+            <li><a href="#">https://hiphoteltulum.com/</a></li>
+            <li><a href="#">https://www.hardrockhotels.com/</a></li>
           </ul>
         </div>
         <div class="col c3">
           <h2><span>Medios</span> De Contacto</h2>
-          <p>Nullam quam lorem, tristique non vestibulum nec, consectetur in risus. Aliquam a quam vel leo gravida
-            gravida eu porttitor dui.</p>
+          <p>Contactanos los 365 dias del año</p>
           <p class="contact_info"> <span>Address:</span> 1458 TemplateAccess, USA<br />
-            <span>Telephone:</span> +123-1234-5678<br />
-            <span>FAX:</span> +458-4578<br />
-            <span>Others:</span> +301 - 0125 - 01258<br />
-            <span>E-mail:</span> <a href="#">mail@yoursitename.com</a>
+            <span>Telefono:</span> 7121654210<br />
+            <span>Facebook:</span> AgenciaBAB<br />
+            <span>Instagram:</span> agenciabab<br />
+            <span>Correo:</span> <a href="#">agenciaBAB@gmail.com</a>
           </p>
         </div>
         <div class="clr"></div>

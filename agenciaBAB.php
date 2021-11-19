@@ -1,11 +1,10 @@
 <?php
 session_start();
-if(!isset($_SESSION['tipoCuenta'])){
-    header("Location: index.html");
+if (!isset($_SESSION['tipoCuenta'])) {
+  header("Location: index.html");
 }
 ?>
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -28,13 +27,10 @@ if(!isset($_SESSION['tipoCuenta'])){
           <h1><a href="bienvenida.php">AGENCIA <span>BAB</span> <small>Recoriendo el camino contigo</small></a></h1>
         </div>
         <div class="searchform">
-          <form id="formsearch" name="formsearch" method="post" action="#">
-            <span>
-              <input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80"
-                value="Search our ste:" type="text" />
-            </span>
-            <input name="button_search" src="images/search.gif" class="button_search" type="image" />
-          </form>
+          <span>
+            <br><br>
+            <p><?php echo $_SESSION['tipoCuenta']; ?></p>
+          </span>
         </div>
         <div class="clr"></div>
         <div class="menu_nav">
@@ -43,7 +39,7 @@ if(!isset($_SESSION['tipoCuenta'])){
             <li><a href="recorridos.php"><span>RUTAS Y HORARIOS</span></a></li>
             <li><a href="boletos.php"><span>BOLETOS</span></a></li>
             <li class="active"><a href="agenciaBAB.php"><span>AGENCIA BAB</span></a></li>
-            <li><a href="cerrrSesion.php"><span>SALIR</span></a></li>
+            <li><a href="cerrarSesion.php"><span>SALIR</span></a></li>
           </ul>
         </div>
         <div class="clr"></div>
@@ -57,8 +53,8 @@ if(!isset($_SESSION['tipoCuenta'])){
               </span></a>
             <a href="boletos.php"><img src="images/camion3.png" width="960" height="360" alt="" />
               <span>Viajar con nosotros es muy facil. Si ya adquiriste tu boleto y estas list@ para la aventura solo necesitas llevarlo
-                 impreso el dia del viajes. Puedes verificar y cancelar tus compras en la seccion de boletos, tambien puedes descargar tu
-                 boleto en esta sección</span></a>
+                impreso el dia del viajes. Puedes verificar y cancelar tus compras en la seccion de boletos, tambien puedes descargar tu
+                boleto en esta sección</span></a>
           </div>
           <div class="clr"></div>
         </div>
@@ -68,39 +64,72 @@ if(!isset($_SESSION['tipoCuenta'])){
     <div class="content">
       <div class="content_resize">
         <div class="mainbar">
-          
+          <div class="article">
+            <h2><span>La Agencia de viajes </span>numero uno </h2>
+            <p class="infopost">MISION</a></p>
+            <div class="clr"></div>
+            <div class="img"><img src="images/imagen1.jpg" width="180" height="243" alt="" class="fl" /></div>
+            <div class="post_content">
+              <p>Ofrecer un servicio personalizado de calidad y confiabilidad, a través de la buena atención de nuestro personal debidamente capacitado,
+                diseñando viajes únicos, a precios accesibles, logrando superar las expectativas de nuestros clientes.</p>
+              <p class="infopost">VALORES</a></p>
+              <p>* Amabilidad</p>
+              <p>* Puntualidad</p>
+              <p>* Honestidad</p>
+              <p>* Confiabilidad</p>
+              <p>* Calidad y Excelencia en el servicio</p>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="article">
+            <h2><span>Agencia BAB</span> seguridad al viajar</h2>
+            <p class="infopost">VISION</a></p>
+            <div class="clr"></div>
+            <div class="img"><img src="images/imagen2.jpg" width="180" height="243" alt="" class="fl" /></div>
+            <div class="post_content">
+              <p>
+                Llegar ser una Agencia de Viajes reconocida en nuestra región, por la confianza y seguridad que le ofrecemos a nuestros clientes,
+                presentando innovadores servicios y asegurando una actividad turística estable, promoviendo un ambiente de buenas relaciones y
+                obteniendo la mayor satisfacción de nuestros clientes.
+              </p>
+              <p class="infopost">OBJETIVO</a></p>
+              <p>Crecer económicamente como empresa turística a través de las ventas de servicios o productos de los más altos estándares de
+                calidad y manteniendo la confiabilidad y fidelidad de nuestros clientes.</p>
+            </div>
+            <div class="clr"></div>
+          </div>
+
           <!--<p class="pages"><small>Page 1 of 2 &nbsp;&nbsp;&nbsp;</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
         -->
         </div>
         <div class="sidebar">
           <div class="gadget">
-            <h2 class="star"><span>Menu</span>Auxiliar</h2>
-            <div class="clr"></div>
-            <ul class="sb_menu">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Eligenos</a></li>
-              <li><a href="#">¿Quienes somos?</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Archives</a></li>
-              <li><a href="#">Web Templates</a></li>
-            </ul>
-          </div>
-          <div class="gadget">
             <h2 class="star"><span>ALIADOS EN NUESTROS VIAJES</span></h2>
             <div class="clr"></div>
             <ul class="ex_menu">
-              <li><a href="http://www.dreamtemplate.com/">¿Necesitas mas de un asiento?</a><br />
+              <li><a href="https://www.bestday.com.mx/">¿Necesitas reservar un hotel?</a><br />
                 Contamos con servicio especial para agencias de viajes</li>
-              <li><a href="http://www.templatesold.com/">TemplateSOLD</a><br />
-                Premium WordPress &amp; Joomla Themes</li>
-              <li><a href="http://www.imhosted.com/">ImHosted.com</a><br />
-                Affordable Web Hosting Provider</li>
-              <li><a href="http://www.megastockphotos.com/">MegaStockPhotos</a><br />
-                Unlimited Amazing Stock Photos</li>
-              <li><a href="http://www.evrsoft.com/">Evrsoft</a><br />
-                Website Builder Software &amp; Tools</li>
-              <li><a href="http://www.csshub.com/">CSS Hub</a><br />
-                Premium CSS Templates</li>
+              <li><a href="http://www.templatesold.com/">Paquetes sugeridos</a><br />
+                Paquetes numero uno</li>
+              <li><a href="http://www.imhosted.com/">Ofertas</a><br />
+                Aprovecha Ofertas</li>
+              <li><a href="http://www.megastockphotos.com/">Zonas turisticas</a><br />
+                Las mejores 5 zonas turisticas</li>
+              <li><a href="http://www.evrsoft.com/">Playas</a><br />
+                Las mejores playas</li>
+              <li><a href="http://www.csshub.com/">Zonas Arqueológicas</a><br />
+                Las mejores 5 Zonas Arqueológicas</li>
+            </ul>
+          </div>
+          <div class="gadget">
+            <h2 class="star"><span>Menu</span>Auxiliar</h2>
+            <div class="clr"></div>
+            <ul class="sb_menu">
+              <li><a href="bienvenida.php">Bienvenido</a></li>
+              <li><a href="recorridos.php">Rutas y horarios</a></li>
+              <li><a href="boletos.php">Boletos</a></li>
+              <li><a href="agenciaBAB.php">Agencia BAB</a></li>
+              <li><a href="cerrarSesion.php">Salir</a></li>
             </ul>
           </div>
         </div>
@@ -111,32 +140,30 @@ if(!isset($_SESSION['tipoCuenta'])){
       <div class="fbg_resize">
         <div class="col c1">
           <h2><span>Image</span> Gallery</h2>
-          <a href="#"><img src="images/gal1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img
-              src="images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen3.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen4.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen5.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen6.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen7.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen8.jpg" width="75" height="75" alt="" class="gal" /></a>
         </div>
         <div class="col c2">
-          <h2><span>Services</span> Overview</h2>
-          <p>Curabitur sed urna id nunc pulvinar semper. Nunc sit amet tortor sit amet lacus sagittis posuere cursus
-            vitae nunc.Etiam venenatis, turpis at eleifend porta, nisl nulla bibendum justo.</p>
+          <h2><span>Servicios</span> Hoteles</h2>
+          <p>Sigue el enlace de estas paginas y reserva un hotel</p>
           <ul class="fbg_ul">
-            <li><a href="#">Lorem ipsum dolor labore et dolore.</a></li>
-            <li><a href="#">Excepteur officia deserunt.</a></li>
-            <li><a href="#">Integer tellus ipsum tempor sed.</a></li>
+            <li><a href="#">https://www.bestday.com.mx/</a></li>
+            <li><a href="#">https://hiphoteltulum.com/</a></li>
+            <li><a href="#">https://www.hardrockhotels.com/</a></li>
           </ul>
         </div>
         <div class="col c3">
           <h2><span>Medios</span> De Contacto</h2>
-          <p>Nullam quam lorem, tristique non vestibulum nec, consectetur in risus. Aliquam a quam vel leo gravida
-            gravida eu porttitor dui.</p>
+          <p>Contactanos los 365 dias del año</p>
           <p class="contact_info"> <span>Address:</span> 1458 TemplateAccess, USA<br />
-            <span>Telephone:</span> +123-1234-5678<br />
-            <span>FAX:</span> +458-4578<br />
-            <span>Others:</span> +301 - 0125 - 01258<br />
-            <span>E-mail:</span> <a href="#">mail@yoursitename.com</a>
+            <span>Telefono:</span> 7121654210<br />
+            <span>Facebook:</span> AgenciaBAB<br />
+            <span>Instagram:</span> agenciabab<br />
+            <span>Correo:</span> <a href="#">agenciaBAB@gmail.com</a>
           </p>
         </div>
         <div class="clr"></div>

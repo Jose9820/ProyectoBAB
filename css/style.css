@@ -413,6 +413,10 @@ ol li .send {
 	float:right;
 	padding:0;
 }
+.searchform p{
+	color: black;
+}
+
 #formsearch {
 	margin:0;
 	padding:42px 20px 0 0;

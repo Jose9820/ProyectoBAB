@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['tipoCuenta'])){
+if (!isset($_SESSION['tipoCuenta'])) {
   header("Location: index.html");
 }
 
@@ -40,12 +40,10 @@ mysqli_close($conexion);
           <h1><a href="bienvenida.php">AGENCIA <span>BAB</span> <small>Recoriendo el camino contigo</small></a></h1>
         </div>
         <div class="searchform">
-          <form id="formsearch" name="formsearch" method="post" action="#">
-            <span>
-              <input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80" value="Search our ste:" type="text" />
-            </span>
-            <input name="button_search" src="images/search.gif" class="button_search" type="image" />
-          </form>
+          <span>
+            <br><br>
+            <p><?php echo $_SESSION['tipoCuenta']; ?></p>
+          </span>
         </div>
         <div class="clr"></div>
         <div class="menu_nav">
@@ -95,7 +93,7 @@ mysqli_close($conexion);
             <label>Email:</label><br />
             <input type="text" id="email1" name="email" value="" size="25" /><br />
             <br />
-            <input type="hidden" name="id_boleto" value="<?php echo"$idBoleto";?>">
+            <input type="hidden" name="id_boleto" value="<?php echo "$idBoleto"; ?>">
             <input type="submit" value="Comprar">
           </form>
           <!--<p class="pages"><small>Page 1 of 2 &nbsp;&nbsp;&nbsp;</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
@@ -103,33 +101,32 @@ mysqli_close($conexion);
         </div>
         <div class="sidebar">
           <div class="gadget">
-            <h2 class="star"><span>Menu</span>Auxiliar</h2>
-            <div class="clr"></div>
-            <ul class="sb_menu">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Eligenos</a></li>
-              <li><a href="#">¿Quienes somos?</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Archives</a></li>
-              <li><a href="#">Web Templates</a></li>
-            </ul>
-          </div>
-          <div class="gadget">
             <h2 class="star"><span>ALIADOS EN NUESTROS VIAJES</span></h2>
             <div class="clr"></div>
             <ul class="ex_menu">
-              <li><a href="http://www.dreamtemplate.com/">¿Necesitas mas de un asiento?</a><br />
+              <li><a href="https://www.bestday.com.mx/">¿Necesitas reservar un hotel?</a><br />
                 Contamos con servicio especial para agencias de viajes</li>
-              <li><a href="http://www.templatesold.com/">TemplateSOLD</a><br />
-                Premium WordPress &amp; Joomla Themes</li>
-              <li><a href="http://www.imhosted.com/">ImHosted.com</a><br />
-                Affordable Web Hosting Provider</li>
-              <li><a href="http://www.megastockphotos.com/">MegaStockPhotos</a><br />
-                Unlimited Amazing Stock Photos</li>
-              <li><a href="http://www.evrsoft.com/">Evrsoft</a><br />
-                Website Builder Software &amp; Tools</li>
-              <li><a href="http://www.csshub.com/">CSS Hub</a><br />
-                Premium CSS Templates</li>
+              <li><a href="http://www.templatesold.com/">Paquetes sugeridos</a><br />
+                Paquetes numero uno</li>
+              <li><a href="http://www.imhosted.com/">Ofertas</a><br />
+                Aprovecha Ofertas</li>
+              <li><a href="http://www.megastockphotos.com/">Zonas turisticas</a><br />
+                Las mejores 5 zonas turisticas</li>
+              <li><a href="http://www.evrsoft.com/">Playas</a><br />
+                Las mejores playas</li>
+              <li><a href="http://www.csshub.com/">Zonas Arqueológicas</a><br />
+                Las mejores 5 Zonas Arqueológicas</li>
+            </ul>
+          </div>
+          <div class="gadget">
+            <h2 class="star"><span>Menu</span>Auxiliar</h2>
+            <div class="clr"></div>
+            <ul class="sb_menu">
+              <li><a href="bienvenida.php">Bienvenido</a></li>
+              <li><a href="recorridos.php">Rutas y horarios</a></li>
+              <li><a href="boletos.php">Boletos</a></li>
+              <li><a href="agenciaBAB.php">Agencia BAB</a></li>
+              <li><a href="cerrarSesion.php">Salir</a></li>
             </ul>
           </div>
         </div>
@@ -140,27 +137,30 @@ mysqli_close($conexion);
       <div class="fbg_resize">
         <div class="col c1">
           <h2><span>Image</span> Gallery</h2>
-          <a href="#"><img src="images/gal1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen3.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen4.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen5.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen6.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen7.jpg" width="75" height="75" alt="" class="gal" /></a>
+          <a href="#"><img src="images/imagen8.jpg" width="75" height="75" alt="" class="gal" /></a>
         </div>
         <div class="col c2">
-          <h2><span>Services</span> Overview</h2>
-          <p>Curabitur sed urna id nunc pulvinar semper. Nunc sit amet tortor sit amet lacus sagittis posuere cursus
-            vitae nunc.Etiam venenatis, turpis at eleifend porta, nisl nulla bibendum justo.</p>
+          <h2><span>Servicios</span> Hoteles</h2>
+          <p>Sigue el enlace de estas paginas y reserva un hotel</p>
           <ul class="fbg_ul">
-            <li><a href="#">Lorem ipsum dolor labore et dolore.</a></li>
-            <li><a href="#">Excepteur officia deserunt.</a></li>
-            <li><a href="#">Integer tellus ipsum tempor sed.</a></li>
+            <li><a href="#">https://www.bestday.com.mx/</a></li>
+            <li><a href="#">https://hiphoteltulum.com/</a></li>
+            <li><a href="#">https://www.hardrockhotels.com/</a></li>
           </ul>
         </div>
         <div class="col c3">
           <h2><span>Medios</span> De Contacto</h2>
-          <p>Nullam quam lorem, tristique non vestibulum nec, consectetur in risus. Aliquam a quam vel leo gravida
-            gravida eu porttitor dui.</p>
+          <p>Contactanos los 365 dias del año</p>
           <p class="contact_info"> <span>Address:</span> 1458 TemplateAccess, USA<br />
-            <span>Telephone:</span> +123-1234-5678<br />
-            <span>FAX:</span> +458-4578<br />
-            <span>Others:</span> +301 - 0125 - 01258<br />
-            <span>E-mail:</span> <a href="#">mail@yoursitename.com</a>
+            <span>Telefono:</span> 7121654210<br />
+            <span>Facebook:</span> AgenciaBAB<br />
+            <span>Instagram:</span> agenciabab<br />
+            <span>Correo:</span> <a href="#">agenciaBAB@gmail.com</a>
           </p>
         </div>
         <div class="clr"></div>

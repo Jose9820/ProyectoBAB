@@ -258,10 +258,6 @@ input[type=text]:placeholder, select{
     outline: none;
 } 
 
-#icon {
-  width:60%;
-}
-
 * {
   box-sizing: border-box;
 }
